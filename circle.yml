@@ -1,24 +1,10 @@
 version: 2.1
 orbs:
-  node: circleci/node@4
+  # https://github.com/cypress-io/circleci-orb
+  cypress: cypress-io/cypress@1
 jobs:
   build:
     executor: node/default
     steps:
-      - checkout
-      - run: node --version
-      - restore_cache:
-          keys:
-            # only use the exact cache key to avoid
-            # snowballing multiple versions
-            - v1-deps-{{ checksum "package-lock.json" }}
-      - run: npm ci
+      - cypress/install
       - run: npx cypress cache list
-      - save_cache:
-          key: v1-deps-{{ checksum "package-lock.json" }}
-          paths:
-            # NPM module cache
-            - ~/.npm
-            # Cypress binaries are stored here
-            # according to https://on.cypress.io/caching
-            - ~/.cache/Cypress
