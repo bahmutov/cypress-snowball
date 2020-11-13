@@ -1,0 +1,6 @@
+version: 2.1
+jobs:
+  example:
+    steps:
+      - checkout
+      - run: node --version
