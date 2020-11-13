@@ -1,6 +1,9 @@
 version: 2.1
+orbs:
+  node: circleci/node@4
 jobs:
-  example:
+  build:
+    executor: node/default
     steps:
       - checkout
       - run: node --version
