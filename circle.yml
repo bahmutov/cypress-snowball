@@ -9,11 +9,9 @@ jobs:
       - run: node --version
       - restore_cache:
           keys:
-            # Find a cache corresponding to this specific package-lock.json checksum
-            # when this file is changed, this key will fail
+            # only use the exact cache key to avoid
+            # snowballing multiple versions
             - v1-deps-{{ checksum "package-lock.json" }}
-            # Find the most recently generated cache used from any branch
-            - v1-deps-
       - run: npm ci
       - run: npx cypress cache list
       - save_cache:
