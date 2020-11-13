@@ -2,8 +2,9 @@ version: 2.1
 orbs:
   # https://github.com/cypress-io/circleci-orb
   cypress: cypress-io/cypress@1
-jobs:
+workflows:
   build:
-    steps:
-      - cypress/install
-      - run: npx cypress cache list
+    jobs:
+      - cypress/install:
+          post-install:
+            - run: npx cypress cache list
