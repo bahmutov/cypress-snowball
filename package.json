@@ -1,0 +1,23 @@
+{
+  "name": "cypress-snowball",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bahmutov/cypress-snowball.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bahmutov/cypress-snowball/issues"
+  },
+  "homepage": "https://github.com/bahmutov/cypress-snowball#readme",
+  "devDependencies": {
+    "cypress": "4.12.0"
+  }
+}
