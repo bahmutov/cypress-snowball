@@ -4,7 +4,6 @@ orbs:
   cypress: cypress-io/cypress@1
 jobs:
   build:
-    executor: node/default
     steps:
       - cypress/install
       - run: npx cypress cache list
