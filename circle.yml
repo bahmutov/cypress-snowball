@@ -17,7 +17,7 @@ jobs:
       - run: npm ci
       - run: npx cypress cache list
       - save_cache:
-          key: v1-npm-deps-{{ checksum "package-lock.json" }}
+          key: v1-deps-{{ checksum "package-lock.json" }}
           paths:
             # NPM module cache
             - ~/.npm
